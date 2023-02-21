@@ -58,7 +58,7 @@ let random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(x){
-    return x == 2;
+    return x === 2;
 }
 console.log(isTwo(random));
 /**
@@ -73,8 +73,7 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(tip, totalBill) {
-    let totalTip = totalBill * (.01*tip)
-    return totalTip;
+    return totalBill * (.01 * tip);
 }
 
 /**
@@ -86,7 +85,7 @@ function calculateTip(tip, totalBill) {
 let userBill = Number(prompt("how much was your bill?"));
 let userTip = Number(prompt("what percentage of the bill is the tip?"))
 
-alert("yout tip is: " + calculateTip(userTip,userBill));
+alert("your tip is $: " + calculateTip(userTip,userBill));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -107,4 +106,4 @@ function applyDiscount(beforePrice, afterPrice){
 let userPrice = Number(prompt("how much was your bill?"));
 let userDiscountedPrice = Number(prompt("what percentage off the total?"))
 
-alert("your discount is" + applyDiscount(userPrice, userDiscountedPrice));
+alert("your total with discount is $" + applyDiscount(userPrice, userDiscountedPrice));
