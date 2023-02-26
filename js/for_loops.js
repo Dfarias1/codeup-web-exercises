@@ -15,3 +15,18 @@ for(let x = 0; x < 10; x++){
 	}
 }
 
+for(let z = 1; z <= 9; z++){
+	let iString = "";
+	for(let y = 1; y <= z; y++){
+		iString += z;
+	}
+	console.log(iString);
+}
+
+for(let z = 1; z <= 9; z++){
+	console.log(z);
+}
+
+for (let z = 100; z >= 5; z = z - 5){
+	console.log(z);
+}
