@@ -8,7 +8,7 @@ while(true){
 
 for(let a = 1; a <= 50; a += 2){
 	if(a === input){
-		console.log("numbers skip!: " + a);
+		console.log("number skipped!: " + a);
 		continue;
 	}
 	console.log("this is a odd number " + a);
