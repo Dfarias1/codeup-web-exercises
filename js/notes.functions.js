@@ -1,8 +1,8 @@
-"use strict";
-
-(function ()){
-    alert("hello and welcome to my webpage!")
-})();
+// "use strict";
+//
+// (function ()){
+//     alert("hello and welcome to my webpage!")
+// })();
 
 // //-----------how to invoke(call) a function-------------------
 // console.log("functions");

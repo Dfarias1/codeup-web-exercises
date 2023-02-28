@@ -61,6 +61,7 @@
 	let  second = function(array){
 		return array[1];
 	}
+	console.log(second(names))
 	let last = function(array) {
 		return array[array.length - 1];
 	}
