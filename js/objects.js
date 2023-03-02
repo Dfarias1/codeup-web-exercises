@@ -73,11 +73,11 @@
 	 * `firstName` and `lastName`. Be creative and add at least 5 books to the
 	 * array
 	 *
-	 * Example:
-	 * > console.log(books[0].title) // "The Salmon of Doubt"
-	 * > console.log(books[0].author.firstName) // "Douglas"
-	 * > console.log(books[0].author.lastName) // "Adams"
-	 */
+	 */ Example:
+	  console.log(books[0].title)
+	  console.log(books[0].author.firstName)
+	  console.log(books[0].author.lastName)
+
 
 	let books = [
 		{
@@ -157,5 +157,16 @@ books.forEach(function (book,index, title){
 	 *   outputs the information described above. Refactor your loop to use your
 	 *   `showBookInfo` function.
 	 */
+	function createBook(title, firstName, lastName){
+		 let book = {
+			 title: title,
+			 author: {
+				 firstName: firstName,
+				 lastName: lastName
+			 }
+		 }
+		 return book;
+	}
+
 
 })();
