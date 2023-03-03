@@ -5,36 +5,41 @@
     <title>Register with Us</title>
 </head>
 <body>
-    <form method="POST" action="https://request-inspector.glitch.me/">
-        <label for="email"> Email: </label>
-        <input type="text" id="email" name="email" placeholder="Enter your email">
-        <br>
-        <label for="password"> Password:</label>
-        <input type="text" id="password" name="password" placeholder="Enter password here">
-        <br>
-        <label for="bio" >Bio: </label>
-        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
-    </form>
-    <section>
-        <h2>How did you hear about us?</h2>
-        <label for="billboard">Billboard:</label>
-        <input type="radio" id="billboard" name="donkey" value="billboard">
-        <br>
-        <label for="radio advertisement"> Radio Advertisement: </label>
-        <input type="radio" id="radio advertisement" name="horse" value="radio advertisement">
-        <br>
-        <label for="internet advertisement">Internet Advertisement:</label>
-        <input type="radio" id="internet advertisement" name="pig" value="internet advertisement">
-        <br>
-        <label for="other">Other:</label>
-        <input type="raido" id="other" name="sheep" value="other">
-        <br>
-        <label for="browser">Web Browser</label>
-        <select id="browser" name="browser">
-            <option value="chrome">Chrome Browser</option>
-            <option value="safari">Safari Browser</option>
-    </section>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label for="email"> Email: </label>
+    <input type="text" id="email" name="email" placeholder="Enter your email">
     <br>
-    <input type="submit">
+    <label for="password"> Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter password here">
+    <br>
+    <label for="bio">Bio: </label>
+    <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+    <br>
+    <h2>How did you hear about us?</h2>
+    <label for="billboard">Billboard:</label>
+    <input type="radio" id="billboard" name="donkey" value="billboard">
+    <br>
+    <label for="radio advertisement"> Radio Advertisement: </label>
+    <input type="radio" id="radio advertisement" name="horse" value="radio advertisement">
+    <br>
+    <label for="internet advertisement">Internet Advertisement:</label>
+    <input type="radio" id="internet advertisement" name="pig" value="internet advertisement">
+    <br>
+    <label for="other">Other:</label>
+    <input type="radio" id="other" name="sheep" value="other">
+    <br>
+    <label for="browser">Web Browser</label>
+    <select id="browser" name="browser">
+        <option value="chrome">Chrome Browser</option>
+        <option value="safari">Safari Browser</option>
+        <option value="firefox">Firefox</option>
+        <option value="tor">Tor</option>
+        <option value="brave">Brave</option>
+        <option value="other">Other</option>
+    </select>
+    <br>
+    <button>Register</button>
+</form>
+
 </body>
 </html>
