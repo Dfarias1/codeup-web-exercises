@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+<form method="GET" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="Enter username">
+    <br>
+
+    <label for="password">Password:</label>
+    <input id="password" name="password" type="password" value="password">
+    <br>
+
+    <input type="hidden" name="hidden-input" value="HELLO THERE">
+
+    <!--CHECKBOX-->
+    <label for="cheese">Cheese</label>
+    <input checked type="checkbox" name="toppings" id="cheese" value="cheese">
+    <label for="pepperoni">Pepperoni</label>
+    <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
+    <label for="bacon">Bacon</label>
+    <input type="checkbox" name="toppings" id="bacon" value="bacon">
+    <br>
+
+    <!--  Range  -->
+    <label for="volume">Volume</label>
+    <input type="range" name="volume" id="volume">
+
+    <!--  Radio  -->
+    <p>Favorite Color:</p>
+    <label for="red">Red</label>
+    <input checked type="radio" name="color" id="red" value="red">
+    <label for="green">Green</label>
+    <input disabled type="radio" name="color" id="green" value="green">
+    <label for="blue">Blue</label>
+    <input type="radio" name="color" id="blue" value="blue">
+    <br>
+
+    <!--  Textarea  -->
+    <label for="email-body"></label>
+    <textarea name="email-body" id="email-body">This is the pre-populated text</textarea>
+    <br>
+    <label for="size">Size: </label>
+    <select name="size" id="size">
+        <option value="small">S</option>
+        <option value="medium">M</option>
+        <option value="extra-medium">XM</option>
+        <option value="large">L</option>
+        <option value="extra-large">XL</option>
+        <option value="extra-extra-large">XXL</option>
+    </select>
+    <br>
+    <button>Log In</button>
+
+    <input type="datetime-local" name="date" disabled>
+
+</form>
+
+</body>
+</html>
