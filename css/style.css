@@ -2,7 +2,10 @@ html * {
     font-size: 15px ;
     font-family: "tilt prism";
     color: whitesmoke;
+}
 
+header{
+    text-align: center;
 }
 
 .fancy-header {
@@ -31,13 +34,9 @@ ol, li, td, tr{
     list-style-image: url("../img/blue-mushroom.png");
 }
 
-header{
-    text-align: center;
-}
-
 /* unvisited link (:link) */
 a:link {
-    color:black;
+    color:white;
 }
 
 /* visited link (:visited) */
@@ -47,7 +46,7 @@ a:visited {
 
 /* mouse hover over link (:hover) */
 a:hover {
-    color:darkblue;
+    color:white;
 }
 
 /* active/selected link (:active) */
