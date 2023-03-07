@@ -1,7 +1,41 @@
+:root {
+    --main-bg: #95e8fc;
+    --duck-bg: #fcf495;
+}
+
 body, html {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
+    background-color: var(--main-bg);
     font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.message-info {
+    background-color: #a4b8db;
+    color: #272d38;
+}
+
+.message-success {
+    background-color: #a5eb7c;
+    color: #2c3821;
+}
+
+.message-warning {
+    background-color: var(--duck-bg);
+    color: #635535;
+}
+
+.message-error {
+    background-color: #ed4545;
+    color: #360b0b;
 }
