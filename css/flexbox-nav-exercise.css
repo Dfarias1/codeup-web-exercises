@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #02fa44;
+}
+
+nav {
+    background-color: #3d403d;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav li {
+    margin: 1em 0;
+    font-weight: bolder;
+}
+
+header nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header nav a:hover {
+    color:  #34f768;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar-logo li a {
+    font-size: 3em;
+    padding: 0.2em;
+}
