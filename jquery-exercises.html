@@ -10,6 +10,7 @@
 <body>
 
 <h1>Hello World</h1>
+<h1>look at me</h1>
 
 <p>This is a paragraph</p>
 
@@ -32,6 +33,18 @@
     $('li:nth-of-type(2)').attr('id', 'second')
     $('li:nth-of-type(3)').attr('id', 'thrid')
     $('div').attr('id', 'main-div')
+    $('li').attr('class', 'codeup')
+
+    $('.codeup').css('border', 'solid 1px red')
+    $('.codeup').css('font-size', '20px')
+    $('h1, p, li').css('background-color', 'yellow')
+
+    $('h1').each(function (){
+		alert($(this).text());
+    })
+    // $(function (){
+	// 	alert($('h1').text);
+    // })
 </script>
 
 <!--<script>$(function() {-->
