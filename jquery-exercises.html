@@ -5,14 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Jquery</title>
 </head>
 <body>
 
+<h1>Hello World</h1>
+
+<p>This is a paragraph</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi blanditiis consequuntur dignissimos eligendi excepturi facilis illo laudantium magni maiores maxime minima necessitatibus odit placeat quasi, quo ratione reiciendis similique!</p>
+
+<ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
+
+<div>This is a div</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script>$(function() {
-	alert( 'The DOM has finished loading!' );
-});</script>
+<script>
+    $('h1').attr('id', 'main-heading')
+    $('p').attr('id', 'main-paragraph')
+    $('ul').attr('id', 'main-list')
+    $('li:first').attr('id', 'list')
+    $('li:nth-of-type(2)').attr('id', 'second')
+    $('li:nth-of-type(3)').attr('id', 'thrid')
+    $('div').attr('id', 'main-div')
+</script>
+
+<!--<script>$(function() {-->
+<!--	alert( 'The DOM has finished loading!' );-->
+<!--});-->
+<!--</script>-->
 </body>
 </html>
