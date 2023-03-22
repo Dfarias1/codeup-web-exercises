@@ -10,7 +10,7 @@
 <body>
 
 <h1>Hello World</h1>
-<h1>look at me</h1>
+<h2>look at me</h2>
 
 <p>This is a paragraph</p>
 
@@ -35,9 +35,9 @@
     $('div').attr('id', 'main-div')
     $('li').attr('class', 'codeup')
 
-    $('.codeup').css('border', 'solid 1px red')
-    $('.codeup').css('font-size', '20px')
-    $('h1, p, li').css('background-color', 'yellow')
+    // $('.codeup').css('border', 'solid 1px red')
+    // $('.codeup').css('font-size', '20px')
+    // $('h1, p, li').css('background-color', 'yellow')
 
     $('h1').each(function (){
 		alert($(this).text());
@@ -45,6 +45,25 @@
     // $(function (){
 	// 	alert($('h1').text);
     // })
+
+    //mouse exercise
+    $(document).ready(function () {
+
+	    $("h1").click(function(){
+		    $(this).css("background-color", "cyan");
+	    });
+
+	    $("p").dblclick(function(){
+		    $("p").css("font-size", "18px");
+	    });
+
+	    $("li").hover(function(){
+		    $("li").css("color", "red");
+	    },function(){
+		    $("li").css("color", "black");
+	    })
+
+    });
 </script>
 
 <!--<script>$(function() {-->
