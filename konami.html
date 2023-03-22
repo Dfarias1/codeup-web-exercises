@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<header>
+    Username: Daniel
+    <br>
+    Score: 1,000,000
+    <br>
+    Life #: <span id="life">1</span>
+</header>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-3.6.4.js"></script>
+<script>
+	"use strict";
+	let code= {
+		37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down',
+        65: 'a',
+        66: 'b',
+    };
+
+	let konamiCode = ['up', 'up','down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+	let konmaiPosition = 0;
+
+	document.addEventListener('keydown', function (e){
+		let key = code[e.keyCode];
+		let requiredKey = konamiCode[konmaiPosition];
+		if (key == requiredKey) {
+			konmaiPosition++;
+			if (konmaiPosition == konamiCode.length){
+				activateCheats();
+				konmaiPosition = 0;
+            }
+        } else {
+			konmaiPosition = 0;
+        }
+    });
+
+	function activateCheats(){
+		document.body.style.backgroundColor = 'lime'
+    }
+
+	// <h2>You have added 30 lives! </h2>
+    //
+	// $('h2').each(function (){
+	// 	alert($(this).text());
+	// })
+
+	$(document).keyup(function(event){
+		console.log(event.keyCode);
+	});
+</script>
+</body>
+</html>
