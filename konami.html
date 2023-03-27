@@ -2,59 +2,63 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <link rel="stylesheet" href="css/konami.css">
 </head>
 <body>
 <header>
-    Username: Daniel
+    <li>Username: Daniel</li>
     <br>
-    Score: 1,000,000
+    <li>Score: 1,000,000</li>
     <br>
-    Life #: <span id="life">1</span>
+    <li>Life #: <span id="life">30</span></li>
 </header>
-<h1>Konami Code</h1>
-
+<div id="container">
+    <h1>Konami Code</h1>
+    <p> enter thy code </p>
+</div>
 <script src="js/jquery-3.6.4.js"></script>
 <script>
 	"use strict";
-	let code= {
+	let keys = {
 		37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down',
-        65: 'a',
-        66: 'b',
-    };
+		38: 'up',
+		39: 'right',
+		40: 'down',
+		65: 'a',
+		66: 'b',
+        13: 'start'
 
-	let konamiCode = ['up', 'up','down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
-	let konmaiPosition = 0;
+	};
 
-	document.addEventListener('keydown', function (e){
-		let key = code[e.keyCode];
-		let requiredKey = konamiCode[konmaiPosition];
-		if (key == requiredKey) {
-			konmaiPosition++;
-			if (konmaiPosition == konamiCode.length){
-				activateCheats();
-				konmaiPosition = 0;
-            }
-        } else {
-			konmaiPosition = 0;
-        }
-    });
+	let konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'start'];
 
-	function activateCheats(){
-		document.body.style.backgroundColor = 'lime'
-    }
+	document.addEventListener("keydown", checkCode, false)
 
-	// <h2>You have added 30 lives! </h2>
-    //
-	// $('h2').each(function (){
-	// 	alert($(this).text());
-	// })
+	let keyCount = 0;
 
-	$(document).keyup(function(event){
-		console.log(event.keyCode);
-	});
+	function checkCode(event) {
+		let keyPressed = keys[event.keyCode];
+
+		if (keyPressed === konamiCode[keyCount]) {
+			keyCount++;
+
+		} else {
+			resetKeyState();
+		}if (keyCount === konamiCode.length) {
+			cheatCodeActivated();
+			resetKeyState();
+		}
+	}
+
+	function cheatCodeActivated() {
+		// alert("Cheat Code Activated");
+		$('body').css('background-image', "url(/img/super-mario-headbang.gif)")
+	}
+
+	function resetKeyState() {
+		keyCount = 0;
+	}
+
 </script>
 </body>
 </html>

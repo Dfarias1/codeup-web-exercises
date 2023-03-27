@@ -1,0 +1,27 @@
+body{
+    background-image: url("../img/mario-lvl.gif");
+    text-align: center;
+}
+li{
+    list-style-image: url("../img/blue-mushroom.png");
+}
+
+h1, p{
+    font-family: "Comic Sans MS";
+}
+h1{
+    font-size: 72px;
+    color: #0fb784;
+    padding: 30px;
+}
+
+p{
+    font-size: 24px;
+    color: mediumspringgreen;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+header{
+    color: #95e8fc;
+}
