@@ -44,15 +44,19 @@
 
 		} else {
 			resetKeyState();
+			$('body').css('background-image', 'url(/img/bad-lugi.webp');
+			marioDeath.play()
 		}if (keyCount === konamiCode.length) {
 			cheatCodeActivated();
 			resetKeyState();
 		}
 	}
-
+	let marioLevelUp = new Audio('audio/power-up-mario.mp3')
+    let marioDeath = new Audio('audio/super-mario-death-sound.mp3')
 	function cheatCodeActivated() {
 		// alert("Cheat Code Activated");
 		$('body').css('background-image', "url(/img/super-mario-headbang.gif)")
+        marioLevelUp.play()
 	}
 
 	function resetKeyState() {
