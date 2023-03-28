@@ -10,7 +10,16 @@
         .invisible {
             visibility: hidden;
         }
-
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .first-item-highlight {
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -47,7 +56,7 @@
     <dd class="invisible">What kind of animals where discovered here?</dd>
 </dl>
 <h3>Adams National Historical Park</h3>
-<ul class="hide">
+<ul>
     <li>Adams National Historical Park is located in the City of Quincy, Norfolk County, Massachusetts, approximately ten miles south of Boston.</li>
     <li>The story encompasses five generations of the Adams family (from 1720 to 1927) including two Presidents and First Ladies, three U.S. Ministers, historians, writers and family members who supported and contributed to the success of these public figures.</li>
     <li>Adams National Historical Park is located in the City of Quincy, Norfolk County, Massachusetts, approximately ten miles south of Boston. </li>
@@ -55,7 +64,7 @@
 </ul>
 
 <h3>Friendship Hill National Historic Site</h3>
-<ul class="hide">
+<ul>
     <li>Friendship Hill National Historic Site preserves the country estate of Albert Gallatin, a Swiss emigrant who served his adopted nation during the early years of the republic</li>
     <li>Gallatin is best remembered for his thirteen year tenure as Secretary of the Treasury during the Jefferson and Madison administrations.</li>
     <li>In that time, he reduced the national debt, purchased the Louisiana Territory and funded the Lewis & Clark exploration.</li>
@@ -63,12 +72,40 @@
 </ul>
 
 <h3>Padre Island National Seashore</h3>
-<ul class="hide">
+<ul>
     <li>Padre Island National Seashore separates the Gulf of Mexico from the Laguna Madre, and protects coastline, dunes, prairies, and wind tidal flats.</li>
     <li>Padre Island National Seashore, encompassing 130,434 acres, is the longest remaining undeveloped stretch of barrier island in the world, and offers a wide variety of flora, fauna, and recreation.</li>
     <li>Padre Island National Seashore is the most important nesting beach in the U.S. for the Kemp's ridley, the most endangered sea turtle in the world.</li>
     <li>The park has been a participant in a bi-national, multi-agency effort to save the Kemp's ridley sea turtle since 1978. The park also participates in global efforts to recover the populations of four other threatened and endangered sea turtle species.</li>
 </ul>
+
+<button id="highlighter">To mark the last li of each ul</button>
+
+<script>
+	$('dt').click(function(){
+		console.log(this);
+		$(this).toggleClass('highlight');
+	});
+
+	$('#highlighter').on('click', function(){
+		$('ul').each(function(index, element){
+			$(element).children().last().toggleClass('highlight');
+		});
+	});
+
+	$('h3').click(function(){
+		$(this).next().children().toggleClass('bold-text');
+	});
+
+	$('li').click(function(){
+		$(this).parent().children().first().toggleClass('first-item-highlight');
+	});
+
+	$("h3").click(function(){
+		$(this).next().slideToggle();
+	});
+</script>
+
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
