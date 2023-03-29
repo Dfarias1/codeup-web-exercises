@@ -79,13 +79,15 @@
     <li>The park has been a participant in a bi-national, multi-agency effort to save the Kemp's ridley sea turtle since 1978. The park also participates in global efforts to recover the populations of four other threatened and endangered sea turtle species.</li>
 </ul>
 
-<button id="highlighter">To mark the last li of each ul</button>
+<button id="highlighter">Click Me!!!</button>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
+    $('#highlighter').click(function (){
+		$('dd').toggleClass("invisible")
+    })
 	$('dt').click(function(){
-		console.log(this);
 		$(this).toggleClass('highlight');
 	});
 
