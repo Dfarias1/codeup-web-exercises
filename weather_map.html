@@ -17,15 +17,41 @@
 <body>
 
 <div id='map'></div>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder.js"></script>
+<script>
 
-$.get("http://api.openweathermap.org/data/2.5/weather", {
-APPID: OPEN_WEATHER_APPID,
-q:     "San Antonio, US"
-});
+	mapboxgl.accessToken = MAPBOX_TOKEN;
+	let map = new mapboxgl.Map({
+		container: 'map', // container ID
+		style: 'mapbox://styles/mapbox/streets-v11', // style URL
+		zoom: 12, // starting zoom
+		center: [-96.47081355057867, 32.74854732039453] // [lng, lat]
+	});
+	let marker = new mapboxgl.Marker()
+		//setting marker object location
+		.setLngLat([-96.47081355057867, 32.74854732039453])
+		//adding marker to map
+		.addTo(map)
 
+	let popup = new mapboxgl.Popup()
+		.setLngLat([-96.47081355057867, 32.74854732039453])
+		.setHTML("<h1>Mcdonalds!</p>")
+	marker.setPopup(popup)
+
+	$.get("http://api.openweathermap.org/data/2.5/weather", {
+		APPID: OPEN_WEATHER_APPID,
+		lat:    32.74854732039453,
+		lon:   -96.47081355057867,
+		units: "imperial"
+	}).done(function(data) {
+		console.log('current weather', data);
+	});
+
+
+</script>
 
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder.js"></script>
 </body>
 </html>
-32.74854732039453, -96.47081355057867
