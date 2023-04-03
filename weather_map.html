@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'>
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+
+$.get("http://api.openweathermap.org/data/2.5/weather", {
+APPID: OPEN_WEATHER_APPID,
+q:     "San Antonio, US"
+});
+
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder.js"></script>
+</body>
+</html>
+32.74854732039453, -96.47081355057867
