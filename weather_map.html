@@ -13,57 +13,90 @@
             width: 75%;
             height: 700px;
         }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .column {
+            float: left;
+            width: 20%;
+            padding: 0 10px;
+        }
+        .row {margin: 0 -5px;}
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <h5 class="card-title">Day 1</h5>
+            <p class="card-text">Temperature: <span id="day1-temp"></span></p>
+            <p class="card-text">Description: <span id="day1-description"></span></p>
+            <p class="card-text">Humidity: <span id="day1-humidity"></span></p>
+            <p class="card-text">Wind: <span id="day1-wind"></span></p>
+            <p class="card-text">Pressure: <span id="day1-pressure"></span></p>
         </div>
-        <div class="col-md-6">
-            <h2>5-Day Weather Forecast</h2>
-            <div class="card-deck">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 1</h5>
-                        <p class="card-text">Temperature: 88 <span id="day1-temp"></span></p>
-                        <p class="card-text">Humidity: 60% <span id="day1-humidity"></span></p>
-                        <p class="card-text">Description: hot and humid <span id="day1-description"></span></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 2</h5>
-                        <p class="card-text">Temperature: 75 <span id="day2-temp"></span></p>
-                        <p class="card-text">Humidity: 40%<span id="day2-humidity"></span></p>
-                        <p class="card-text">Description: 12 degrees cooler<span id="day2-description"></span></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 3</h5>
-                        <p class="card-text">Temperature: 72 <span id="day3-temp"></span></p>
-                        <p class="card-text">Humidity: 40% <span id="day3-humidity"></span></p>
-                        <p class="card-text">Description: cloudy <span id="day3-description"></span></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 4</h5>
-                        <p class="card-text">Temperature: 68<span id="day4-temp"></span></p>
-                        <p class="card-text">Humidity: 32%<span id="day4-humidity"></span></p>
-                        <p class="card-text">Description: partly cloudy and 4 degrees cooler<span id="day4-description"></span></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Day 5</h5>
-                        <p class="card-text">Temperature: 91 <span id="day5-temp"></span></p>
-                        <p class="card-text">Humidity: 88%<span id="day5-humidity"></span></p>
-                        <p class="card-text">Description: texas weather is bi-polar<span id="day5-description"></span></p>
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <h5 class="card-title">Day 2</h5>
+            <p class="card-text">Temperature: <span id="day2-temp"></span></p>
+            <p class="card-text">Description: <span id="day2-description"></span></p>
+            <p class="card-text">Humidity: <span id="day2-humidity"></span></p>
+            <p class="card-text">Wind: <span id="day2-wind"></span></p>
+            <p class="card-text">Pressure: <span id="day2-pressure"></span></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <h5 class="card-title">Day 3</h5>
+            <p class="card-text">Temperature: <span id="day3-temp"></span></p>
+            <p class="card-text">Description: <span id="day3-description"></span></p>
+            <p class="card-text">Humidity: <span id="day3-humidity"></span></p>
+            <p class="card-text">Wind: <span id="day3-wind"></span></p>
+            <p class="card-text">Pressure: <span id="day3-pressure"></span></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <h5 class="card-title">Day 4</h5>
+            <p class="card-text">Temperature: <span id="day4-temp"></span></p>
+            <p class="card-text">Description: <span id="day4-description"></span></p>
+            <p class="card-text">Humidity: <span id="day4-humidity"></span></p>
+            <p class="card-text">Wind: <span id="day4-wind"></span></p>
+            <p class="card-text">Pressure: <span id="day4-pressure"></span></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <h5 class="card-title">Day 5</h5>
+            <p class="card-text">Temperature: <span id="day5-temp"></span></p>
+            <p class="card-text">Description: <span id="day5-description"></span></p>
+            <p class="card-text">Humidity: <span id="day5-humidity"></span></p>
+            <p class="card-text">Wind: <span id="day5-wind"></span></p>
+            <p class="card-text">Pressure: <span id="day5-pressure"></span></p>
         </div>
     </div>
 </div>
@@ -90,13 +123,19 @@
 		.setHTML("<h1>Forney, TX</p>")
 	marker.setPopup(popup)
 
-	$.get("http://api.openweathermap.org/data/2.5/weather", {
-		APPID: OPEN_WEATHER_APPID,
-		q: "Forney, US",
-		units: "imperial"
-	}).done(function(data) {
-		console.log('current weather', data);
-	});
+	function updateWeatherData() {
+		$.get("http://api.openweathermap.org/data/2.5/weather", {
+			APPID: OPEN_WEATHER_APPID,
+			q: "Forney, US",
+			units: "imperial"
+		}).done(function(data) {
+			console.log('current weather:', data);
+
+			$("#day1-temp").text(data.main.temp);
+			$("#day1-humidity").text(data.main.humidity);
+			$("#day1-description").text(data.weather[0].description);
+		});
+	}
 
 
 </script>
