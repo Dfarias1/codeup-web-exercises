@@ -9,7 +9,7 @@
     <style>
         #map {
             /* the width and height may be set to any size */
-            width: 100%;
+            width: 75%;
             height: 700px;
         }
     </style>
@@ -36,13 +36,12 @@
 
 	let popup = new mapboxgl.Popup()
 		.setLngLat([-96.47081355057867, 32.74854732039453])
-		.setHTML("<h1>Mcdonalds!</p>")
+		.setHTML("<h1>Forney, TX</p>")
 	marker.setPopup(popup)
 
 	$.get("http://api.openweathermap.org/data/2.5/weather", {
 		APPID: OPEN_WEATHER_APPID,
-		lat:    32.74854732039453,
-		lon:   -96.47081355057867,
+		q: "Forney, US",
 		units: "imperial"
 	}).done(function(data) {
 		console.log('current weather', data);
