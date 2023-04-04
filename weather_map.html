@@ -36,7 +36,8 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             padding: 16px;
             text-align: center;
-            background-color: #f1f1f1;
+            background-color: #17fcff;
+           color: #0b09ff;
         }
         @media screen and (max-width: 600px) {
             .column {
@@ -100,6 +101,7 @@
         </div>
     </div>
 </div>
+<br>
 <div id='map'></div>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder.js"></script>
@@ -112,34 +114,37 @@
 		zoom: 12, // starting zoom
 		center: [-96.47081355057867, 32.74854732039453] // [lng, lat]
 	});
+
+		$.get("http://api.openweathermap.org/data/2.5/weather", {
+			APPID: OPEN_WEATHER_APPID,
+			q: "Forney, US",
+			units: "imperial"
+		}).done(function(data) {
+			console.log(data);
+			console.log(data.list);
+			for (let i = 0; i < 40; i+=8) {
+				console.log(data.list[i]);
+				// adding card for each forecast day
+				$('#weather').append("<div class='weatherCards'><p class='date'>" + data.list[i].dt_txt.slice(0,11) + "</p>" +
+					"<div class='row'><p class='temp'>" + data.list[i].main.temp_min + " / "  + data.list[i].main.temp_max + "</p>" +
+					"<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png' class='weatherIcon'></div>" +
+					"<hr>" +
+					"<p>Description: " + data.list[i].weather[0].description + "</p>" +
+					"<p>Humidity: " + data.list[i].main.humidity + "%" +
+					"<p>Wind: " + data.list[i].wind.speed + " mph" + "</p>" +
+					"<p>Pressure: " + data.list[i].main.pressure + "</p></div>")
+			}
+		});
+
 	let marker = new mapboxgl.Marker()
 		//setting marker object location
 		.setLngLat([-96.47081355057867, 32.74854732039453])
 		//adding marker to map
 		.addTo(map)
 
-	let popup = new mapboxgl.Popup()
-		.setLngLat([-96.47081355057867, 32.74854732039453])
-		.setHTML("<h1>Forney, TX</p>")
-	marker.setPopup(popup)
-
-	function updateWeatherData() {
-		$.get("http://api.openweathermap.org/data/2.5/weather", {
-			APPID: OPEN_WEATHER_APPID,
-			q: "Forney, US",
-			units: "imperial"
-		}).done(function(data) {
-			console.log('current weather:', data);
-
-			$("#day1-temp").text(data.main.temp);
-			$("#day1-humidity").text(data.main.humidity);
-			$("#day1-description").text(data.weather[0].description);
-		});
-	}
-
-
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="js/jquery-3.6.4.js"></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder.js"></script>
 </body>
