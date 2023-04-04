@@ -31,7 +31,7 @@
         .weatherCards {
             border: black 2px solid;
             /*padding: 15px 50px;*/
-            background-color: rgba(255,255,255,0.51);
+            background-color: rgba(0,77,255,0.84);
             border-radius: 15px;
         }
         .date {
@@ -47,7 +47,7 @@
             width: 100px;
             height: 100px;
             margin: auto;
-            padding: auto;
+            /*padding: auto;*/
         }
 
         p {
@@ -60,7 +60,7 @@
     <div class="container-fluid">
         <a class="navbar-brand">Weather App</a>
         <form class="d-flex" role="search">
-            <input id="searchInput" class="form-control me-2" type="search" placeholder="Ex: Dallas" aria-label="Search">
+            <input id="searchInput" class="form-control me-2" type="search" placeholder="Ex: Fort Worth" aria-label="Search">
             <button id="search" class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </div>
@@ -77,11 +77,11 @@
 	let map = new mapboxgl.Map({
 		container: 'map', // container ID
 		style: 'mapbox://styles/mapbox/streets-v11', // style URL
-		zoom: 12, // starting zoom
+		zoom: 10, // starting zoom
 		center: [-96.47081355057867, 32.74854732039453] // [lng, lat]
 	});
 
-		$.get("http://api.openweathermap.org/data/2.5/weather", {
+		$.get("http://api.openweathermap.org/data/2.5/forecast", {
 			APPID: OPEN_WEATHER_APPID,
 			q: "Forney, US",
 			units: "imperial"
@@ -92,13 +92,15 @@
 				console.log(data.list[i]);
 				// adding card for each forecast day
 				$('#weather').append("<div class='weatherCards'><p class='date'>" + data.list[i].dt_txt.slice(0,11) + "</p>" +
-					"<div class='row'><p class='temp'>" + data.list[i].main.temp_min + " / "  + data.list[i].main.temp_max + "</p>" +
+					"<div class='row'>" +
+                    "<p class='temp'>" + data.list[i].main.temp_min + " / "  + data.list[i].main.temp_max + "</p>" +
 					"<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png' class='weatherIcon'></div>" +
 					"<hr>" +
 					"<p>Description: " + data.list[i].weather[0].description + "</p>" +
 					"<p>Humidity: " + data.list[i].main.humidity + "%" +
 					"<p>Wind: " + data.list[i].wind.speed + " mph" + "</p>" +
-					"<p>Pressure: " + data.list[i].main.pressure + "</p></div>")
+					"<p>Pressure: " + data.list[i].main.pressure + "</p>" +
+                    "</div>")
 			}
 		});
 
@@ -169,6 +171,7 @@
 		});
 	})
 	map.on('click', updateMarker)
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
