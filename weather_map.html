@@ -24,7 +24,8 @@
             justify-content: space-around;
             padding-top: 15px;
             padding-bottom: 15px;
-            background-image: url("img/weathergal.jpg");
+            background-image: url("img/dallas-skyline.jpeg");
+            /*background-color: darkslategrey;*/
             background-position: center;
             background-size: cover;
         }
@@ -32,11 +33,13 @@
         .weatherCards {
             border: black 2px solid;
             /*padding: 15px 50px;*/
-            background-color: rgba(0,77,255,0.84);
+            /*background-image: url("img/lighting-bolt.jpeg");*/
+            background-color: transparent;
+            color: white;
             border-radius: 15px;
         }
         .date {
-            background-color: rgba(35,255,0,0.8);
+            background-color: #868682;
             font-weight: bold;
         }
 
@@ -57,12 +60,12 @@
     </style>
 </head>
 <body>
-<nav class="navbar" style="background-color: rgba(0,200,23,0.18)">
+<nav class="navbar" style="background-color: #868682">
     <div class="container-fluid">
-        <a class="navbar-brand">Weather App</a>
+        <a class="navbar-brand" style="color: #95e8fc">Weather App</a>
         <form class="d-flex" role="search">
-            <input id="searchInput" class="form-control me-2" type="search" placeholder="Ex: Fort Worth" aria-label="Search">
-            <button id="search" class="btn btn-outline-success" type="submit">Search</button>
+            <input id="input" class="form-control me-2" type="search" placeholder="Ex: Fort Worth, TX" aria-label="Search">
+            <button id="search" class="btn btn-outline-info" style="color: #95e8fc" type="submit">Search</button>
         </form>
     </div>
 </nav>
@@ -141,8 +144,8 @@
 		});
 	}
 	$('#search').click(function(event) {
-		console.log($('#searchInput').val())
-		geocode($('#searchInput').val(), MAPBOX_TOKEN).then(function(result) {
+		console.log($('#input').val())
+		geocode($('#input').val(), MAPBOX_TOKEN).then(function(result) {
 			console.log(result);
 			$('#weather').empty();
 			map.setCenter(result)
