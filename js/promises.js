@@ -18,16 +18,4 @@ function getUserLastCommit(username) {
 }
 
 console.log(getUserLastCommit('dfarias1'));
-//.then( date => console.log('Last commit date: ', date) );
-document.querySelector('#getCommitDate').addEventListener('click', function(e){
-	e.preventDefault();
-	console.log('clicked');
-	const input = document.querySelector('#username');
 
-	console.log(input.value);
-	getUserLastCommit(input.value).then((date)=>{
-		console.log(date);
-		const div = document.querySelector('#lastcommitdate');
-		div.innerHTML = `Last commit was on ${date}`;
-	});
-})
